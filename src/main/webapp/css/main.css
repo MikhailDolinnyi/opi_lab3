@@ -1,0 +1,183 @@
+header {
+    display: flex;
+    align-items: center;
+    font-family: serif;
+    background: white;
+    margin-bottom: 3%;
+    font-size: 30px;
+    border-radius: 5px;
+    padding: 10px;
+    color: black;
+    position: relative;
+}
+
+
+
+.player {
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* Сдвигает плеер к левому краю */
+}
+
+.header-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.controls button {
+
+    color: black;
+    border: none;
+    padding: 4px 8px;
+    margin: 0 2px;
+    font-size: 17px;
+    border-radius: 5px;
+    cursor: pointer;
+    filter: grayscale(100%); /* Преобразует цвет в черно-белый */
+}
+
+.controls button:hover {
+    background-color: #555;
+}
+
+
+body {
+
+    /*background: url('images/52.jpg') fixed;*/
+    background-size: contain;
+    margin: 0;
+    font-family: Calibri, serif;
+
+
+}
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+
+table {
+
+    border-collapse: collapse;
+}
+
+#coordinate-plate {
+
+
+    width: 12%;
+}
+
+#coordinate-plate svg {
+
+    border-radius: 25px;
+}
+
+
+#input {
+    width: 14%;
+
+}
+
+
+#data-form\:legend-x, #data-form\:legend-y, #data-form\:legend-r {
+    border-radius: 10px;
+    background: white;
+    border-width: 0;
+    margin-bottom: 3%;
+
+}
+
+
+#data-form\:legend-r legend {
+    background: white;
+    border-radius: 3px;
+    padding: 0;
+
+}
+
+
+#input fieldset {
+    margin-bottom: 3%;
+
+}
+
+
+#submit {
+    background-color: white;
+    border-radius: 10px;
+    border-color: white;
+    font-size: 17px;
+}
+
+
+#small {
+    font-size: 17px;
+}
+
+#result {
+
+    width: 30%;
+    vertical-align: top;
+
+}
+
+#result-table {
+    max-height: 450px; /* Фиксированная высота для таблицы */
+    overflow-y: auto; /* Вертикальная прокрутка */
+    display: block;
+    border: 2px grey;
+    border-collapse: collapse;
+    width: 100%;
+    background: white;
+    border-radius: 13px;
+
+}
+
+
+#result th, #result td {
+    width: 100px; /* Ширина ячеек для корректной работы прокрутки */
+    text-align: center;
+}
+
+
+#error {
+    color: black;
+    background-color: white;
+    margin-bottom: 2%;
+    border-radius: 5px;
+}
+
+
+#result-x {
+    width: 10%;
+}
+
+#result-y {
+    width: 12%;
+}
+
+#result-r {
+    width: 10%;
+}
+
+#result-time {
+    width: 24%;
+}
+
+#result-now {
+    width: 24%;
+}
+
+#result-answer {
+    width: 22%
+}
+
+

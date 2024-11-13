@@ -1,0 +1,25 @@
+.clock{
+    background: white;
+    color: black;
+}
+
+header {
+    font-family: serif;
+    background: white;
+    margin-bottom: 3%; /* Отступ снизу */
+    font-size: 30px; /* Размер шрифта */
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    color: black;
+}
+
+body {
+
+    background: url('images/52.jpg') fixed;
+    background-size: contain;
+    margin: 0;
+    font-family: Calibri, serif;
+
+
+}
