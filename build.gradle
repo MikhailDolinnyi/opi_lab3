@@ -34,6 +34,10 @@ dependencies {
     implementation 'org.postgresql:postgresql:42.7.4'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 
+    implementation("org.glassfish:jakarta.el:5.0.0")
+    implementation("jakarta.validation:jakarta.validation-api:3.0.2")
+
+
 
 }
 

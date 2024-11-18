@@ -34,11 +34,6 @@
 
 
 
-    <managed-bean>
-        <managed-bean-name>controllerBean</managed-bean-name>
-        <managed-bean-class>ru.mikhail.lab3.beans.ControllerBean</managed-bean-class>
-        <managed-bean-scope>session</managed-bean-scope>
-    </managed-bean>
 
 
 
