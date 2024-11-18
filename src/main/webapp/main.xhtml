@@ -29,12 +29,12 @@
         </div>
 
         <div class="header-text">
-            Долинный Михаил Владимирович, P3232, 99438
+            Долинный Михаил Владимирович, P3232, 8963
         </div>
 
 
     </header>
-<!--    <audio id="intro_audio" src="audio/site-intro.mp3" autoplay="true"></audio>-->
+
 
     <video class="video-background" autoplay="autoplay" loop="loop" muted="muted" >
         <source src="css/images/FRIENDLY%20THUG%2052%20NGG%20-%20AMMO.mp4" type="video/mp4"/>
@@ -66,7 +66,7 @@
                     <rect id="rect" x="150" y="251" width="99" height="100" fill="white"/>
 
                     <!-- 4 четверть полукруг-->
-                    <path id="arc" d="M 350 251 A 75 100 400 0 1 251 350 L 251 251 Z" fill="white"/>
+                    <path id="arc" d="M 350 251 A 100 100 0 0 1 251 350 L 251 251 Z" fill="white"/>
 
                     <!-- Треугольник-->
                     <polygon id="triangle" points="251,249 251,200 300,249" fill="white"/>
@@ -99,17 +99,9 @@
                     <h:panelGrid columns="1" id="legend-x">
 
                         <h:outputLabel for="x" value="Выберите X (от -2 до 2):"/>
-                        <h:selectOneMenu id="x" value="#{controllerBean.x}" required="true">
-                            <f:selectItem itemLabel="-2" itemValue="-2"/>
-                            <f:selectItem itemLabel="-1.5" itemValue="-1.5"/>
-                            <f:selectItem itemLabel="-1" itemValue="-1"/>
-                            <f:selectItem itemLabel="-0.5" itemValue="-0.5"/>
-                            <f:selectItem itemLabel="0" itemValue="0"/>
-                            <f:selectItem itemLabel="0.5" itemValue="0.5"/>
-                            <f:selectItem itemLabel="1" itemValue="1"/>
-                            <f:selectItem itemLabel="1.5" itemValue="1.5"/>
-                            <f:selectItem itemLabel="2" itemValue="2"/>
-                        </h:selectOneMenu>
+                        <h:inputText id="x" value="#{controllerBean.x}" required="true">
+                            <f:validateDoubleRange minimum="-2" maximum="2"/>
+                        </h:inputText>
 
                     </h:panelGrid>
 
@@ -136,7 +128,7 @@
                     </h:panelGrid>
 
 
-                    <h:commandButton id="submit" value="Проверить" action="#{controllerBean.completeRequest()}"
+                    <h:commandButton styleClass="submit" id="submit" value="Проверить" action="#{controllerBean.completeRequest()}"
                                      onclick="return validateAndSubmitForm();">
                         <f:ajax execute="@form" render="result-form plate-with-dots"/>
                     </h:commandButton>
@@ -178,10 +170,10 @@
 
 
     <h:form>
-        <h:commandButton value="Начальная страница" action="index"/>
+        <h:commandButton value="Начальная страница" action="index" styleClass="submit"/>
     </h:form>
     <h:form>
-        <h:commandButton value="пасхалка" action="easter"/>
+        <h:commandButton value="Пасхалка" action="easter" styleClass="submit"/>
     </h:form>
 
 

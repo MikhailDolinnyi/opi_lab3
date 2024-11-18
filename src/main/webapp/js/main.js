@@ -68,11 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
         rValidator.validate(values.r);
     }
 
-    function roundToNearestValue(value, valuesArray) {
-        return valuesArray.reduce((prev, curr) =>
-            Math.abs(curr - value) < Math.abs(prev - value) ? curr : prev
-        );
-    }
 
     function handleClick(event) {
         const svg = document.getElementById("plate");
@@ -87,11 +82,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         try {
-            validateFormInput({x: x, y: y.toFixed(2), r: r});
-            x = roundToNearestValue(x,[-2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2]);
+            validateFormInput({x: x.toFixed(2), y: y.toFixed(2), r: r});
 
 
-            document.querySelector('select[id$=":x"]').value = x;
+
+            document.querySelector('input[id$=":x"]').value = x.toFixed(2);
             document.querySelector('input[id$=":y"]').value = y.toFixed(2);
             document.querySelector('input[name="data-form:rSelect"][value="' + r + '"]').checked = true;
 
@@ -159,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         // Update the arc path (same as before)
-        document.getElementById("arc").setAttribute("d", `M ${250 + 100 * scaleFactor} 251 A ${75 * scaleFactor} ${100 * scaleFactor} 400 0 1 251 ${250 + 100 * scaleFactor} L 251 251 Z`);
+        document.getElementById("arc").setAttribute("d", `M ${250 + 100 * scaleFactor} 251 A ${100 * scaleFactor} ${100 * scaleFactor} 0 0 1 251 ${250 + 100 * scaleFactor} L 251 251 Z`);
 
         // Update the triangle points (same as before)
         document.getElementById("triangle").setAttribute("points", `251,249 251,${250 - 50 * scaleFactor} ${250 + 50 * scaleFactor},249`);

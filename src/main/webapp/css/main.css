@@ -90,8 +90,8 @@ table {
 #data-form\:legend-x, #data-form\:legend-y, #data-form\:legend-r {
     border-radius: 10px;
     background: white;
-    border-width: 0;
     margin-bottom: 3%;
+    padding: 5px 5px;
 
 }
 
@@ -110,11 +110,12 @@ table {
 }
 
 
-#submit {
+.submit {
     background-color: white;
     border-radius: 10px;
     border-color: white;
     font-size: 17px;
+    margin-bottom: 0.5%;
 }
 
 
@@ -179,5 +180,6 @@ table {
 #result-answer {
     width: 22%
 }
+
 
 

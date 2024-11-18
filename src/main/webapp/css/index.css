@@ -1,6 +1,9 @@
 .clock{
     background: white;
     color: black;
+    display: inline-block;
+    border-radius: 6px;
+    padding: 5px 5px;
 }
 
 header {
@@ -23,3 +26,19 @@ body {
 
 
 }
+
+.clock{
+    font-size: 20px;
+    margin-bottom: 1%;
+
+
+}
+
+.main {
+    background-color: white;
+    border-radius: 10px;
+    border-color: white;
+    font-size: 17px;
+    margin-bottom: 0.5%;
+}
+
