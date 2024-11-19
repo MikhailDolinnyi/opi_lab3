@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'war'
     id 'org.jetbrains.kotlin.jvm' version '1.9.23'
+    id 'org.jetbrains.kotlin.plugin.jpa' version '2.0.21'
 }
 
 group 'ru.mikhail'
@@ -34,12 +35,14 @@ dependencies {
     implementation 'org.postgresql:postgresql:42.7.4'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 
-    implementation("org.glassfish:jakarta.el:5.0.0")
+    implementation 'jakarta.el:jakarta.el-api:6.0.1'
     implementation("jakarta.validation:jakarta.validation-api:3.0.2")
 
 
 
 }
+
+
 
 test {
     useJUnitPlatform()

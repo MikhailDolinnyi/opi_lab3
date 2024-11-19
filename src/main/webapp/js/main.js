@@ -77,13 +77,14 @@ document.addEventListener("DOMContentLoaded", function () {
         const coords = point.matrixTransform(svg.getScreenCTM().inverse());
 
         const r = document.querySelector('input[name="data-form:rSelect"]:checked')?.value;
-        let x =(coords.x - 250) / 33;
+        let x = (coords.x - 250) / 33;
         let y = (250 - coords.y) / 33;
+
+
 
 
         try {
             validateFormInput({x: x.toFixed(2), y: y.toFixed(2), r: r});
-
 
 
             document.querySelector('input[id$=":x"]').value = x.toFixed(2);
@@ -146,7 +147,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const scaleFactor = r / 3;
 
 
-
         document.getElementById("rect").setAttribute("width", 99 * scaleFactor);
         document.getElementById("rect").setAttribute("height", 100 * scaleFactor);
         document.getElementById("rect").setAttribute("x", 250 - 100 * scaleFactor);
@@ -178,7 +178,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("label-neg-ry").setAttribute("y", 250 + 110 * scaleFactor);
         document.getElementById("label-ry").setAttribute("y", 250 - 96 * scaleFactor);
     }
-
 
 
     function drawPoints() {

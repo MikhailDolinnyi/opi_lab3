@@ -33,9 +33,6 @@ class Result(
         nowTime = nowTime
     )
 
-    // Hibernate требует публичный конструктор без аргументов
-    constructor() : this(0f, 0f, 0f, false, 0, null)
-
     override fun toString(): String {
         return "Result(id=$id, x=$x, y=$y, r=$r, result=$result, executionTime=$executionTime, nowTime=$nowTime)"
     }

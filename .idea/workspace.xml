@@ -13,8 +13,7 @@
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/mikhail/lab3/beans/ControllerBean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/mikhail/lab3/beans/ControllerBean.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -314,7 +313,8 @@
       <workItem from="1731521162287" duration="1983000" />
       <workItem from="1731924791130" duration="3449000" />
       <workItem from="1731928290390" duration="194000" />
-      <workItem from="1731938638242" duration="1868000" />
+      <workItem from="1731938638242" duration="2389000" />
+      <workItem from="1732045113642" duration="2281000" />
     </task>
     <servers />
   </component>
