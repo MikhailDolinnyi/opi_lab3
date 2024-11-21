@@ -11,9 +11,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Добавление треков
+    addTrack("AMMO REMIX", "audio/ammo_boris_redwall.mp3");
     addTrack("AMMO", "audio/ammo.mp3");
-    addTrack("Cristoforo Colombo", "audio/CristoforoColombo.mp3");
-    addTrack("Трек 3", "audio/ne-very.mp3");
+    addTrack("LOST", "audio/lost.mp3");
+    addTrack("PAPER", "audio/paper_flow.mp3");
+    addTrack("SLADKI", "audio/sladki_snov.mp3")
+    addTrack("NA CIRCUS", "audio/na_circus.mp3")
+    addTrack("LEGIT CHECK", "audio/legit_check.mp3")
+    addTrack("CRISTOFOR", "audio/cristofor.mp3");
+
+
 
     // Функция для обновления текущего трека
     function loadTrack(index) {
