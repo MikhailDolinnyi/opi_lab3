@@ -4,37 +4,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     function changeTimeZone() {
+        const clientTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        document.querySelectorAll(".now-time").forEach(cell => {
+            const mscTimeString = cell.textContent.trim(); // Исходное время
+            const [datePart, timePart] = mscTimeString.split(" "); // Разделяем дату и время
+            const moscowDate = new Date(`${datePart}T${timePart}+03:00`); // Создаём объект Date в московском времени
 
-        const clientTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
-        const nowTimeCells = document.querySelectorAll(".now-time");
+            if (!isNaN(moscowDate)) { // Проверяем корректность времени
+                const options = {
+                    timeZone: clientTimeZone,
+                    year: "numeric",
+                    month: "2-digit",
+                    day: "2-digit",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    second: "2-digit",
+                    fractionalSecondDigits: 3,
+                };
 
-        nowTimeCells.forEach(cell => {
-            const mscTimeString = cell.textContent.trim(); // Get the time string
-            // // Parse the Moscow time string into a Date object with Moscow's offset
-            const moscowDate = new Date(`${mscTimeString} GMT+0300`);
+                const clientTime = new Intl.DateTimeFormat("en-GB", options).format(moscowDate);
 
-            // if (!isNaN(moscowDate)) {
-            // Convert the time to the client's time zone
-            const options = {
-                timeZone: clientTimeZone,
-                year: "numeric",
-                month: "2-digit",
-                day: "2-digit",
-                hour: "2-digit",
-                minute: "2-digit",
-                second: "2-digit",
-                fractionalSecondDigits: 3,
-            };
-
-            const clientTime = new Intl.DateTimeFormat("en-GB", options).format(moscowDate);
-
-            // Reformat the output to match "YYYY-MM-DD HH:mm:ss.SSSSSS" style
-            // Remove comma if present
-            cell.textContent = clientTime
-                .replaceAll(",", "")
-                .replaceAll("/", "-")
+                cell.textContent = clientTime.replaceAll("/", "-").replace(",", ""); // Обновляем текст ячейки
+            }
         });
     }
+
 
 
     // Классы валидации и функции валидации
