@@ -1,5 +1,41 @@
 // Оборачиваем код в обработчик события DOMContentLoaded, чтобы убедиться, что элементы DOM загружены
 document.addEventListener("DOMContentLoaded", function () {
+    const center_coordinate_plate = 250;
+
+
+    function changeTimeZone() {
+
+        const clientTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone
+        const nowTimeCells = document.querySelectorAll(".now-time");
+
+        nowTimeCells.forEach(cell => {
+            const mscTimeString = cell.textContent.trim(); // Get the time string
+            // // Parse the Moscow time string into a Date object with Moscow's offset
+            const moscowDate = new Date(`${mscTimeString} GMT+0300`);
+
+            // if (!isNaN(moscowDate)) {
+            // Convert the time to the client's time zone
+            const options = {
+                timeZone: clientTimeZone,
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit",
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+                fractionalSecondDigits: 3,
+            };
+
+            const clientTime = new Intl.DateTimeFormat("en-GB", options).format(moscowDate);
+
+            // Reformat the output to match "YYYY-MM-DD HH:mm:ss.SSSSSS" style
+            // Remove comma if present
+            cell.textContent = clientTime
+                .replaceAll(",", "")
+                .replaceAll("/", "-")
+        });
+    }
+
 
     // Классы валидации и функции валидации
     class InvalidValueException extends Error {
@@ -81,8 +117,6 @@ document.addEventListener("DOMContentLoaded", function () {
         let y = (250 - coords.y) / 33;
 
 
-
-
         try {
             validateFormInput({x: x.toFixed(2), y: y.toFixed(2), r: r});
 
@@ -146,7 +180,6 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateGraph(r) {
         const scaleFactor = r / 3;
 
-
         document.getElementById("rect").setAttribute("width", 99 * scaleFactor);
         document.getElementById("rect").setAttribute("height", 100 * scaleFactor);
         document.getElementById("rect").setAttribute("x", 250 - 100 * scaleFactor);
@@ -177,10 +210,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.getElementById("label-neg-ry").setAttribute("y", 250 + 110 * scaleFactor);
         document.getElementById("label-ry").setAttribute("y", 250 - 96 * scaleFactor);
+
+        drawPoints(scaleFactor)
+
     }
 
 
-    function drawPoints() {
+    function drawPoints(r = 1) {
         console.log("drawPoints called");
         const svg = document.getElementById("plate");
         // Очищаем старые точки перед отрисовкой новых
@@ -196,8 +232,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const result = point.getAttribute("data-result") === "true";
 
             // Преобразуем координаты для SVG-системы (центр 250,250 и масштаб)
-            const svgX = 250 + x * 33;
-            const svgY = 250 - y * 33;
+            const svgX = center_coordinate_plate + (x * r * 33);
+            const svgY = center_coordinate_plate - (y * r * 33);
 
             // Создаем круг для точки
             const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
@@ -217,7 +253,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const resultElement = document.getElementById("result");
     if (resultElement) {
         const observer = new MutationObserver(function () {
-            drawPoints();
+            const rValue = parseFloat(document.querySelector('input[name="data-form\:rSelect"]:checked')?.value);
+            if (!isNaN(rValue)) {
+                drawPoints(rValue / 3);
+
+            }
+            changeTimeZone();
         });
 
         observer.observe(resultElement, {
@@ -226,7 +267,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+
     drawPoints(); // Изначальная отрисовка точек
+    changeTimeZone();
 
 
 });

@@ -10,44 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f663821-082b-41a0-8749-99af2f0f9a05" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules/ru.mikhail.lab3.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ru/mikhail/lab3/ResponseData.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ru/mikhail/lab3/controllers/ControllerBean.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/ru/mikhail/lab3/repositories/ResultDAO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/audio/ammo_boris_redwall.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/audio/legit_check.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/audio/lost.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/audio/na_circus.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/audio/paper_flow.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/audio/sladki_snov.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/sha1-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/82bfd41d-ab40-4809-97fd-99d29fa3a5f2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/82bfd41d-ab40-4809-97fd-99d29fa3a5f2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/82bfd41d-ab40-4809-97fd-99d29fa3a5f2/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/82bfd41d-ab40-4809-97fd-99d29fa3a5f2/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/82bfd41d-ab40-4809-97fd-99d29fa3a5f2/storage_v2/_src_/database/postgres.edMnLQ/schema/lab1.RJAyAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/82bfd41d-ab40-4809-97fd-99d29fa3a5f2/storage_v2/_src_/database/postgres.edMnLQ/schema/lab1.RJAyAA.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/82bfd41d-ab40-4809-97fd-99d29fa3a5f2/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/82bfd41d-ab40-4809-97fd-99d29fa3a5f2/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/82bfd41d-ab40-4809-97fd-99d29fa3a5f2/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/82bfd41d-ab40-4809-97fd-99d29fa3a5f2/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/lab3.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/lab3.main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/ru/mikhail/lab3/beans/ControllerBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/ru/mikhail/lab3/beans/DotCheckerBean$Companion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/ru/mikhail/lab3/beans/DotCheckerBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/ru/mikhail/lab3/beans/IControllerBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/ru/mikhail/lab3/beans/IDotCheckerBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/ru/mikhail/lab3/dbcommunication/HibernateSessionFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/ru/mikhail/lab3/dbcommunication/ResultDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/ru/mikhail/lab3/dbcommunication/ResultDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/ru/mikhail/lab3/dbcommunication/ResultService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream.len" afterDir="false" />
@@ -119,16 +89,8 @@
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/classpath-snapshot/shrunk-classpath-snapshot.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/classpath-snapshot/shrunk-classpath-snapshot.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/local-state/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/local-state/build-history.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/lab3-1.0-SNAPSHOT-KOTLIN.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/lab3-1.0-SNAPSHOT-KOTLIN.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/mikhail/lab3/beans/ControllerBean.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/mikhail/lab3/beans/DotCheckerBean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/mikhail/lab3/controllers/DotCheckerBean.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/mikhail/lab3/beans/IControllerBean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/mikhail/lab3/controllers/IControllerBean.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/mikhail/lab3/beans/IDotCheckerBean.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/mikhail/lab3/controllers/IDotCheckerBean.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/mikhail/lab3/dbcommunication/HibernateSessionFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/mikhail/lab3/HibernateSessionFactory.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/mikhail/lab3/dbcommunication/ResultDAO.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/mikhail/lab3/dbcommunication/ResultDAOImpl.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/mikhail/lab3/dbcommunication/ResultService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/mikhail/lab3/services/ResultService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/audio/CristoforoColombo.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/audio/cristofor.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/player.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/player.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/META-INF/beans.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,6 +185,7 @@
     "Gradle.lab3_kotlin [clean].executor": "Run",
     "Gradle.lab3_kotlin [war].executor": "Run",
     "JBoss/WildFly Server.JBoss/WildFly 33.0.2.Final.executor": "Run",
+    "JBoss/WildFly Server.JBoss/WildFly 34.0.1.Final.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
@@ -274,7 +237,7 @@
       <recent name="ru.mikhail.lab3" />
     </key>
   </component>
-  <component name="RunManager" selected="JBoss/WildFly Server.JBoss/WildFly 33.0.2.Final">
+  <component name="RunManager" selected="JBoss/WildFly Server.JBoss/WildFly 34.0.1.Final">
     <configuration default="true" type="Application" factoryName="Application">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -324,7 +287,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="JBoss/WildFly 33.0.2.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 33.0.2.Final" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="JBoss/WildFly 34.0.1.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 34.0.1.Final" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Gradle : ru.mikhail : lab3-1.0-SNAPSHOT-KOTLIN.war">
@@ -335,7 +298,7 @@
         <option name="SERVER" />
         <option name="BINDING_SET_NAME" value="" />
         <option name="DOMAIN" value="false" />
-        <option name="SERVER_GROUP" value="main-server-group" />
+        <option name="SERVER_GROUP" />
         <option name="USERNAME" value="" />
         <option name="CREDENTIAL_ALIAS" />
       </server-settings>
@@ -398,7 +361,7 @@
     <list>
       <item itemvalue="Gradle.lab3_kotlin [war]" />
       <item itemvalue="Gradle.lab3_kotlin [clean]" />
-      <item itemvalue="JBoss/WildFly Server.JBoss/WildFly 33.0.2.Final" />
+      <item itemvalue="JBoss/WildFly Server.JBoss/WildFly 34.0.1.Final" />
     </list>
     <recent_temporary>
       <list>
@@ -497,6 +460,11 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.lang.Class" memberName="name" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
