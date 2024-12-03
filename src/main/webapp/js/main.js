@@ -8,6 +8,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let counter = 0;
 
+    const table = document.getElementById("result-table");
+
+    function isTableEmpty() {
+        // Находим все строки таблицы, кроме заголовков (<th>)
+        const rows = table.querySelectorAll("tr:not(:first-child)");
+
+        // Если строк больше 0, то таблица не пуста
+        return rows.length === 0;
+    }
+
+
     const radioButtons = document.querySelectorAll('input[name="data-form\:rSelect"]');
     radioButtons.forEach(radio => {
         radio.addEventListener('change', function () {
@@ -325,7 +336,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    let first_init = true;
+
 
 
     // Таймер для дебаунсинга
@@ -346,12 +357,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Устанавливаем новый таймер
             debounceTimer = setTimeout(() => {
+
+
                 mutation_counter++
                 console.log(mutation_counter, '-------------------')
                 changeTimeZone(); // Выполняем обновление часового пояса
 
-                if (mutation_counter !== 1 || first_init) {
-                    first_init= false;
+                if (mutation_counter !== 1 || isTableEmpty()) {
+
                     const rValue = parseFloat(document.querySelector('input[name="data-form\:rSelect"]:checked')?.value);
                     if (!isNaN(rValue)) {
                         drawPoints(rValue / 3, true); // Вызываем обновление графика
