@@ -23,7 +23,7 @@ open class ResultService{
         return result
     }
 
-    open fun saveResult(result: Any) {
+    open fun <T:Result> saveResult(result: T) {
         val session = HibernateSessionFactory.getSessionFactory().openSession()
         val tx = session.beginTransaction()
         resultDAO.save(result, session, tx)

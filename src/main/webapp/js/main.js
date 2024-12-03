@@ -56,10 +56,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-
-
-
     function changeTimeZone() {
         const clientTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
         document.querySelectorAll(".now-time").forEach(cell => {
@@ -85,6 +81,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+
+
 
 
 
@@ -145,14 +143,25 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    class EntityValidator extends Validator {
+        validate(value) {
+            if (!value) {
+                throw new InvalidValueException("Пожалуйста, выберите Entity");
+            }
+            return true;
+        }
+    }
+
     const xValidator = new XValidator();
     const yValidator = new YValidator();
     const rValidator = new RValidator();
+    const entityValidator = new EntityValidator();
 
     function validateFormInput(values) {
         xValidator.validate(values.x);
         yValidator.validate(values.y);
         rValidator.validate(values.r);
+        entityValidator.validate(values.e)
     }
 
 
@@ -164,12 +173,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const coords = point.matrixTransform(svg.getScreenCTM().inverse());
 
         const r = document.querySelector('input[name="data-form:rSelect"]:checked')?.value;
+        const e = document.querySelector('input[name="data-form:entity"]:checked')?.value;
         let x = (coords.x - 250) / 33;
         let y = (250 - coords.y) / 33;
 
 
         try {
-            validateFormInput({x: x.toFixed(2), y: y.toFixed(2), r: r});
+            validateFormInput({x: x.toFixed(2), y: y.toFixed(2), r: r, e: e});
 
 
             document.querySelector('input[id$=":x"]').value = x.toFixed(2);
@@ -192,7 +202,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const values = {
             x: formData.get('data-form:x'),
             y: formData.get('data-form:y'),
-            r: formData.get('data-form:rSelect')
+            r: formData.get('data-form:rSelect'),
+            e: formData.get('data-form:entity')
         };
 
         const errorDiv = document.getElementById("error");
@@ -284,14 +295,13 @@ document.addEventListener("DOMContentLoaded", function () {
             circle.setAttribute("cx", svgX);
             circle.setAttribute("cy", svgY);
             circle.setAttribute("r", 2);
-            circle.setAttribute("fill", checkDot(x,y,document.querySelector('input[name="data-form\:rSelect"]:checked')?.value) ? "green" : "red");
+            circle.setAttribute("fill", checkDot(x, y, document.querySelector('input[name="data-form\:rSelect"]:checked')?.value) ? "green" : "red");
             circle.classList.add("data-point");
 
             // Добавляем точку на svg
             svg.appendChild(circle);
         });
     }
-
 
 
     // Таймер для дебаунсинга
