@@ -20,7 +20,7 @@ open class ResultDAO {
         }
     }
 
-    open fun save(result: Result, session: Session, tx: Transaction) {
+    open fun save(result: Any, session: Session, tx: Transaction) {
         try {
             session.persist(result)
             tx.commit()
@@ -54,7 +54,10 @@ open class ResultDAO {
 
     open fun findAll(session: Session): List<Result> {
         return try {
-            session.createQuery("from Result", Result::class.java).list()
+            session.use { sess-> val query = sess.createQuery("from Result", Result::class.java)
+            query.resultList
+            }
+//            session.createQuery("from Result", Result::class.java).list()
         } catch (e: HibernateException) {
             println(e.message)
             emptyList()

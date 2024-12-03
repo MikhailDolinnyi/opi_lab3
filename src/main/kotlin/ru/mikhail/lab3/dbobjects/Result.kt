@@ -4,36 +4,21 @@ import jakarta.persistence.*
 import java.sql.Timestamp
 
 @Entity
-@Table(name = "results")
-class Result(
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+abstract class Result(
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Int? = null,
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    open val id: Int? = null,
 
-    var x: Float = 0f,
-    var y: Float = 0f,
-    var r: Float = 0f,
-    var result: Boolean = false,
+    open var x: Float,
+    open var y: Float,
+    open var r: Float,
+    open var result: Boolean,
 
     @Column(name = "execution_time")
-    var executionTime: Long = 0,
+    open var executionTime: Long,
 
     @Column(name = "now_time")
-    var nowTime: Timestamp? = null
-) {
-    // Конструктор для создания экземпляра без id
-    constructor(x: Float, y: Float, r: Float, result: Boolean, executionTime: Long, nowTime: Timestamp?) : this(
-        id = null,
-        x = x,
-        y = y,
-        r = r,
-        result = result,
-        executionTime = executionTime,
-        nowTime = nowTime
-    )
-
-    override fun toString(): String {
-        return "Result(id=$id, x=$x, y=$y, r=$r, result=$result, executionTime=$executionTime, nowTime=$nowTime)"
-    }
-}
+    open var nowTime: Timestamp
+)

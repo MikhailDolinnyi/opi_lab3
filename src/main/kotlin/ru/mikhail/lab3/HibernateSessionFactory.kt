@@ -6,6 +6,8 @@ import org.hibernate.SessionFactory
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder
 import org.hibernate.cfg.Configuration
 import ru.mikhail.lab3.dbobjects.Result
+import ru.mikhail.lab3.dbobjects.ResultAnt
+import ru.mikhail.lab3.dbobjects.ResultSpider
 
 @Named("hibernateSessionFactoryBean")
 @Singleton
@@ -18,6 +20,8 @@ object HibernateSessionFactory{
             try {
                 val configuration = Configuration().configure()
                 configuration.addAnnotatedClass(Result::class.java)
+                configuration.addAnnotatedClass(ResultAnt::class.java)
+                configuration.addAnnotatedClass(ResultSpider::class.java)
                 val builder = StandardServiceRegistryBuilder().applySettings(configuration.properties)
                 sessionFactory = configuration.buildSessionFactory(builder.build())
 

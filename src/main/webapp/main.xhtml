@@ -36,7 +36,7 @@
     </header>
 
 
-    <video class="video-background" autoplay="autoplay" loop="loop" muted="muted" >
+    <video class="video-background" autoplay="autoplay" loop="loop" muted="muted">
         <source src="css/images/FRIENDLY%20THUG%2052%20NGG%20-%20AMMO.mp4" type="video/mp4"/>
     </video>
     <table>
@@ -127,8 +127,18 @@
                         </h:panelGroup>
                     </h:panelGrid>
 
+                    <h:panelGrid columns="1" id="legend-entity">
+                        <h:outputLabel for="entity" value="Выберите сущность:"/>
+                        <h:selectOneRadio id="entity" value="#{controllerBean.entity}" required="true">
+                            <f:selectItem itemValue="ResultSpider" itemLabel="ResultSpider"/>
+                            <f:selectItem itemValue="ResultAnt" itemLabel="ResultAnt"/>
 
-                    <h:commandButton styleClass="submit" id="submit" value="Проверить" action="#{controllerBean.completeRequest()}"
+                        </h:selectOneRadio>
+                    </h:panelGrid>
+
+
+                    <h:commandButton styleClass="submit" id="submit" value="Проверить"
+                                     action="#{controllerBean.completeRequest()}"
                                      onclick="return validateAndSubmitForm();">
                         <f:ajax execute="@form" render="result-form plate-with-dots"/>
                     </h:commandButton>

@@ -87,7 +87,7 @@ table {
 }
 
 
-#data-form\:legend-x, #data-form\:legend-y, #data-form\:legend-r {
+#data-form\:legend-x, #data-form\:legend-y, #data-form\:legend-r, #data-form\:legend-entity{
     border-radius: 10px;
     background: white;
     margin-bottom: 3%;

@@ -30,6 +30,13 @@ open class ControllerBean : IControllerBean { // Реализуем интерф
     @field:Min(1)
     override var r: Float = 0f
 
+    override var logsQuantity : Int = 15
+    override var bodyColor: String = "da"
+
+    @NotNull
+    override var entity: String? = null
+
+
 
 
     @Inject
@@ -42,7 +49,8 @@ open class ControllerBean : IControllerBean { // Реализуем интерф
     private lateinit var dotCheckerBean: IDotCheckerBean
 
     override fun completeRequest() {
-        resultService.saveResult(dotCheckerBean.checkAndCalculatePoint())
+
+        resultService.saveResult(dotCheckerBean.checkAndCalculatePoint(entity))
     }
 
     override fun getResultList(): List<ResponseData> {

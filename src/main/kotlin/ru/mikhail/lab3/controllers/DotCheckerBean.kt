@@ -5,6 +5,8 @@ import jakarta.inject.Inject
 import jakarta.inject.Named
 import ru.mikhail.lab3.DotChecker.checkDot
 import ru.mikhail.lab3.dbobjects.Result
+import ru.mikhail.lab3.dbobjects.ResultAnt
+import ru.mikhail.lab3.dbobjects.ResultSpider
 import java.sql.Timestamp
 import java.time.LocalDateTime
 
@@ -19,13 +21,18 @@ open class DotCheckerBean : IDotCheckerBean { // Реализуем интерф
     @Inject
     private lateinit var controllerBean: IControllerBean // Инжектируем интерфейс
 
-    override fun checkAndCalculatePoint(): Result {
+    override fun checkAndCalculatePoint(entity: String?): Any {
         val startTime = System.nanoTime()
         val result = checkDot(controllerBean.x, controllerBean.y, controllerBean.r)
         val endTime = System.nanoTime()
         val executionTime = maxOf(endTime - startTime, MIN_EXECUTION_TIME_NS)
         val now = Timestamp.valueOf(LocalDateTime.now())
 
-        return Result(controllerBean.x, controllerBean.y, controllerBean.r, result, executionTime, now)
+        return if(entity == "ResultSpider"){
+            ResultSpider(controllerBean.x, controllerBean.y, controllerBean.r, result, executionTime, now, controllerBean.logsQuantity)
+        }else{
+            ResultAnt(controllerBean.x, controllerBean.y, controllerBean.r, result, executionTime, now, controllerBean.bodyColor)
+        }
+
     }
 }
