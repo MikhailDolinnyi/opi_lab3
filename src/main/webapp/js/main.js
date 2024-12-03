@@ -2,8 +2,11 @@
 document.addEventListener("DOMContentLoaded", function () {
     const center_coordinate_plate = 250;
 
+    let mutation_counter = 0;
 
     const defaultRValue = "3";
+
+    let counter = 0;
 
     const radioButtons = document.querySelectorAll('input[name="data-form\:rSelect"]');
     radioButtons.forEach(radio => {
@@ -20,40 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
             defaultRadio.checked = true;
         }
     }
-
-    function checkDot(x, y, r) {
-        return checkFirstQuarter(x, y, r) || checkSecondQuarter() ||
-            checkThirdQuarter(x, y, r) || checkFourthQuarter(x, y, r);
-    }
-
-    function checkFirstQuarter(x, y, r) {
-        if (x >= 0 && y >= 0) {
-            // Треугольник со сторонами R/2
-            return y <= (-x + r / 2);
-        }
-        return false;
-    }
-
-    function checkSecondQuarter() {
-        return false;
-    }
-
-    function checkThirdQuarter(x, y, r) {
-        if (x <= 0 && y <= 0) {
-            // Квадрат
-            return x >= -r && y >= -r;
-        }
-        return false;
-    }
-
-    function checkFourthQuarter(x, y, r) {
-        if (x >= 0 && y <= 0) {
-            // Условие: x^2 + y^2 <= R^2
-            return x * x + y * y <= r * r;
-        }
-        return false;
-    }
-
 
 
     function changeTimeZone() {
@@ -81,9 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-
-
-
 
 
     // Классы валидации и функции валидации
@@ -266,42 +232,100 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("label-neg-ry").setAttribute("y", 250 + 110 * scaleFactor);
         document.getElementById("label-ry").setAttribute("y", 250 - 96 * scaleFactor);
 
-        drawPoints()
+        drawPoints(scaleFactor, false)
 
     }
 
 
-    function drawPoints() {
-        console.log("drawPoints called");
-        const svg = document.getElementById("plate");
+    function drawPoints(scale = 1, new_point = false) {
+        console.log("drawPoints called with r = ", scale, "and new_point = ", new_point);
+        console.trace("Trace for drawPoints call");
+        let svg = document.getElementById("plate");
         // Очищаем старые точки перед отрисовкой новых
-        svg.querySelectorAll(".data-point").forEach(point => point.remove());
+        svg.querySelectorAll(".data-point").forEach(point => {
+                point.remove()
 
-        // Находим все точки в #points-data
-        const points = document.querySelectorAll("#points-data .point");
+            }
+        )// Находим все точки в #points-data
+        let points = document.querySelectorAll("#points-data .point");
 
-        points.forEach(point => {
-            // Извлекаем данные из атрибутов
+        let pointsArray
+        let otherPoints
+        let lastPoints
+
+
+        if (new_point === true) {
+            counter++;
+
+            console.log(counter)
+
+            // Преобразуем NodeList в массив
+            pointsArray = Array.from(points);
+
+            // Последние i точек
+            lastPoints = pointsArray.slice(-counter);
+
+            console.log(lastPoints)
+
+            // Все точки, кроме последних i
+            otherPoints = pointsArray.slice(0, pointsArray.length - counter);
+            console.log(otherPoints)
+        } else {
+
+            lastPoints = 0
+            otherPoints = Array.from(points)
+            counter = 0
+            console.log(otherPoints)
+
+        }
+
+
+        // Отрисовываем другие точки с обычной формулой
+        otherPoints.forEach(point => {
             const x = parseFloat(point.getAttribute("data-x"));
             const y = parseFloat(point.getAttribute("data-y"));
             const result = point.getAttribute("data-result") === "true";
 
-            // Преобразуем координаты для SVG-системы (центр 250,250 и масштаб)
-            const svgX = center_coordinate_plate + (x * 33);
-            const svgY = center_coordinate_plate - (y * 33);
+            const svgX = center_coordinate_plate + (x * (scale * 33));
+            const svgY = center_coordinate_plate - (y * (scale * 33));
+            console.log("old points svg x :", svgX, "svg y : ", svgY, "\n x = ", x, " y = ", y, " scale = ", scale)
 
-            // Создаем круг для точки
+
             const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
             circle.setAttribute("cx", svgX);
             circle.setAttribute("cy", svgY);
             circle.setAttribute("r", 2);
-            circle.setAttribute("fill", checkDot(x, y, document.querySelector('input[name="data-form\:rSelect"]:checked')?.value) ? "green" : "red");
+            circle.setAttribute("fill", result ? "green" : "red");
             circle.classList.add("data-point");
 
-            // Добавляем точку на svg
             svg.appendChild(circle);
         });
+
+        if (lastPoints !== 0) {
+            // Отрисовываем последние i точек с изменённой формулой
+            lastPoints.forEach(point => {
+                const x = parseFloat(point.getAttribute("data-x"));
+                const y = parseFloat(point.getAttribute("data-y"));
+                const result = point.getAttribute("data-result") === "true";
+
+                const svgX = center_coordinate_plate + (x * 33);  // Используем другую формулу
+                const svgY = center_coordinate_plate - (y * 33); // Используем другую формулу
+                console.log("new_point\n svg x :", svgX, "svg y : ", svgY, "\n x = ", x, " y = ", y, " scale = ", scale)
+
+                const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                circle.setAttribute("cx", svgX);
+                circle.setAttribute("cy", svgY);
+                circle.setAttribute("r", 2);
+                circle.setAttribute("fill", result ? "green" : "red");
+                circle.classList.add("data-point");
+
+                svg.appendChild(circle);
+            });
+        }
     }
+
+
+    let first_init = true;
 
 
     // Таймер для дебаунсинга
@@ -322,13 +346,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Устанавливаем новый таймер
             debounceTimer = setTimeout(() => {
+                mutation_counter++
+                console.log(mutation_counter, '-------------------')
                 changeTimeZone(); // Выполняем обновление часового пояса
 
-                const rValue = parseFloat(document.querySelector('input[name="data-form\:rSelect"]:checked')?.value);
-                if (!isNaN(rValue)) {
-                    drawPoints(rValue / 3, true); // Вызываем обновление графика
+                if (mutation_counter !== 1 || first_init) {
+                    first_init= false;
+                    const rValue = parseFloat(document.querySelector('input[name="data-form\:rSelect"]:checked')?.value);
+                    if (!isNaN(rValue)) {
+                        drawPoints(rValue / 3, true); // Вызываем обновление графика
+                    }
                 }
-
                 debounceTimer = null; // Сбрасываем таймер после выполнения
 
                 // Включаем Observer обратно после завершения действий
@@ -345,7 +373,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    drawPoints(); // Изначальная отрисовка точек
     changeTimeZone();
 
 
