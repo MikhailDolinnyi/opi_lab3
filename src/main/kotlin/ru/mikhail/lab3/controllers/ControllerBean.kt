@@ -15,22 +15,22 @@ import ru.mikhail.lab3.services.ResultService
 @ApplicationScoped
 @ManagedBean
 open class ControllerBean : IControllerBean { // Реализуем интерфейс
-
-    override var x: Float = 0f
-
     @NotNull
     @field:Max(2)
     @field:Min(-2)
-    override var y: Float = 0f
+    override var x: Float = 0f
 
     @NotNull
     @field:Max(3)
     @field:Min(-5)
-    override var r: Float = 0f
+    override var y: Float = 0f
 
     @NotNull
     @field:Max(3)
     @field:Min(1)
+    override var r: Float = 0f
+
+
 
     @Inject
     private lateinit var resultService: ResultService

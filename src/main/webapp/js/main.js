@@ -3,6 +3,63 @@ document.addEventListener("DOMContentLoaded", function () {
     const center_coordinate_plate = 250;
 
 
+    const defaultRValue = "3";
+
+    const radioButtons = document.querySelectorAll('input[name="data-form\:rSelect"]');
+    radioButtons.forEach(radio => {
+        radio.addEventListener('change', function () {
+            radius = this.value;
+            updateGraph(radius);
+        });
+    });
+
+    // Установим значение по умолчанию, если ничего не выбрано
+    if (radioButtons.length > 0 && ![...radioButtons].some(radio => radio.checked)) {
+        const defaultRadio = [...radioButtons].find(radio => radio.value === defaultRValue);
+        if (defaultRadio) {
+            defaultRadio.checked = true;
+        }
+    }
+
+    function checkDot(x, y, r) {
+        return checkFirstQuarter(x, y, r) || checkSecondQuarter() ||
+            checkThirdQuarter(x, y, r) || checkFourthQuarter(x, y, r);
+    }
+
+    function checkFirstQuarter(x, y, r) {
+        if (x >= 0 && y >= 0) {
+            // Треугольник со сторонами R/2
+            return y <= (-x + r / 2);
+        }
+        return false;
+    }
+
+    function checkSecondQuarter() {
+        return false;
+    }
+
+    function checkThirdQuarter(x, y, r) {
+        if (x <= 0 && y <= 0) {
+            // Квадрат
+            return x >= -r && y >= -r;
+        }
+        return false;
+    }
+
+    function checkFourthQuarter(x, y, r) {
+        if (x >= 0 && y <= 0) {
+            // Условие: x^2 + y^2 <= R^2
+            return x * x + y * y <= r * r;
+        }
+        return false;
+    }
+
+
+
+
+
+
+
     function changeTimeZone() {
         const clientTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
         document.querySelectorAll(".now-time").forEach(cell => {
@@ -163,13 +220,6 @@ document.addEventListener("DOMContentLoaded", function () {
         updateGraph(radius);
     }
 
-    const radioButtons = document.querySelectorAll('input[name="data-form\:rSelect"]');
-    radioButtons.forEach(radio => {
-        radio.addEventListener('change', function () {
-            radius = this.value;
-            updateGraph(radius);
-        });
-    });
 
     function updateGraph(r) {
         const scaleFactor = r / 3;
@@ -205,12 +255,12 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("label-neg-ry").setAttribute("y", 250 + 110 * scaleFactor);
         document.getElementById("label-ry").setAttribute("y", 250 - 96 * scaleFactor);
 
-        drawPoints(scaleFactor)
+        drawPoints()
 
     }
 
 
-    function drawPoints(r = 1) {
+    function drawPoints() {
         console.log("drawPoints called");
         const svg = document.getElementById("plate");
         // Очищаем старые точки перед отрисовкой новых
@@ -226,15 +276,15 @@ document.addEventListener("DOMContentLoaded", function () {
             const result = point.getAttribute("data-result") === "true";
 
             // Преобразуем координаты для SVG-системы (центр 250,250 и масштаб)
-            const svgX = center_coordinate_plate + (x * r * 33);
-            const svgY = center_coordinate_plate - (y * r * 33);
+            const svgX = center_coordinate_plate + (x * 33);
+            const svgY = center_coordinate_plate - (y * 33);
 
             // Создаем круг для точки
             const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
             circle.setAttribute("cx", svgX);
             circle.setAttribute("cy", svgY);
             circle.setAttribute("r", 2);
-            circle.setAttribute("fill", result ? "green" : "red");
+            circle.setAttribute("fill", checkDot(x,y,document.querySelector('input[name="data-form\:rSelect"]:checked')?.value) ? "green" : "red");
             circle.classList.add("data-point");
 
             // Добавляем точку на svg
@@ -243,24 +293,47 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    // MutationObserver для отслеживания изменений в <td id="result">
+
+    // Таймер для дебаунсинга
+    let debounceTimer = null;
+
+// MutationObserver для отслеживания изменений в <td id="result">
     const resultElement = document.getElementById("result");
     if (resultElement) {
+        // Создаём MutationObserver
         const observer = new MutationObserver(function () {
-            const rValue = parseFloat(document.querySelector('input[name="data-form\:rSelect"]:checked')?.value);
-            if (!isNaN(rValue)) {
-                drawPoints(rValue / 3);
+            // Отключаем Observer перед выполнением действий, чтобы избежать повторного вызова
+            observer.disconnect();
 
+            // Сбрасываем предыдущий таймер, если изменения происходят слишком быстро
+            if (debounceTimer) {
+                clearTimeout(debounceTimer);
             }
-            changeTimeZone();
-        });
 
+            // Устанавливаем новый таймер
+            debounceTimer = setTimeout(() => {
+                changeTimeZone(); // Выполняем обновление часового пояса
+
+                const rValue = parseFloat(document.querySelector('input[name="data-form\:rSelect"]:checked')?.value);
+                if (!isNaN(rValue)) {
+                    drawPoints(rValue / 3, true); // Вызываем обновление графика
+                }
+
+                debounceTimer = null; // Сбрасываем таймер после выполнения
+
+                // Включаем Observer обратно после завершения действий
+                observer.observe(resultElement, {
+                    childList: true,
+                    subtree: true
+                });
+            }, 100); // Интервал в 100 мс (можно настроить по необходимости)
+        });
+        // Включаем Observer для отслеживания изменений
         observer.observe(resultElement, {
             childList: true,
             subtree: true
         });
     }
-
 
     drawPoints(); // Изначальная отрисовка точек
     changeTimeZone();
