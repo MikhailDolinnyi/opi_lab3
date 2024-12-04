@@ -1,15 +1,15 @@
 package ru.mikhail.lab3.controllers
 
 import jakarta.annotation.ManagedBean
-import jakarta.enterprise.context.ApplicationScoped
 import jakarta.enterprise.context.SessionScoped
 import jakarta.inject.Inject
 import jakarta.inject.Named
 import jakarta.validation.constraints.Max
 import jakarta.validation.constraints.Min
 import jakarta.validation.constraints.NotNull
-import ru.mikhail.lab3.ResponseData
-import ru.mikhail.lab3.services.DataService
+import ru.mikhail.lab3.dto.RequestData
+import ru.mikhail.lab3.dto.ResponseData
+import ru.mikhail.lab3.DataMapper
 import ru.mikhail.lab3.services.ResultService
 import java.io.Serializable
 import kotlin.random.Random
@@ -44,18 +44,16 @@ open class ControllerBean : IControllerBean, Serializable { // Реализуе�
     private lateinit var resultService: ResultService
 
     @Inject
-    private lateinit var dataService: DataService
+    private lateinit var dataMapper: DataMapper
 
-    @Inject
-    private lateinit var dotCheckerBean: IDotCheckerBean
 
     override fun completeRequest() {
 
-        resultService.saveResult(dotCheckerBean.checkAndCalculatePoint(entity))
+        resultService.completeRequest(RequestData(x, y, r, logsQuantity, bodyColor, entity))
     }
 
     override fun getResultList(): List<ResponseData> {
-        return dataService.getDataList(resultService.findAllResults())
+        return dataMapper.getDataList(resultService.findAllResults())
 
     }
 }

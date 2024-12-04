@@ -1,7 +1,6 @@
 package ru.mikhail.lab3.controllers
 
-import ru.mikhail.lab3.ResponseData
-import kotlin.random.Random
+import ru.mikhail.lab3.dto.ResponseData
 
 interface IControllerBean {
     var x: Float

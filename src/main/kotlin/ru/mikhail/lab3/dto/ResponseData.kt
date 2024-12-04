@@ -1,4 +1,4 @@
-package ru.mikhail.lab3
+package ru.mikhail.lab3.dto
 
 import java.sql.Timestamp
 

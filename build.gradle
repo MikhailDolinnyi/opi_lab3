@@ -50,6 +50,10 @@ dependencies {
     // Тестирование JUnit
     testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+
+
+    implementation 'org.mapstruct:mapstruct:1.6.3'
+
 }
 
 test {

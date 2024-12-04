@@ -1,13 +1,14 @@
-package ru.mikhail.lab3.services
+package ru.mikhail.lab3
 
 import jakarta.enterprise.context.ApplicationScoped
 import jakarta.inject.Named
-import ru.mikhail.lab3.ResponseData
+import org.mapstruct.Mapper
 import ru.mikhail.lab3.dbobjects.Result
+import ru.mikhail.lab3.dto.ResponseData
 
-@Named("dataService")
+@Named("dataMapper")
 @ApplicationScoped
-open class DataService {
+open class DataMapper {
 
     open fun getDataList(result: List<Result>): List<ResponseData>{
         return result.map{ item ->
