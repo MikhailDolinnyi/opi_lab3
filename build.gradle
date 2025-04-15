@@ -64,3 +64,53 @@ kotlin {
     // Используемая версия JVM
     jvmToolchain(11)
 }
+
+
+tasks.register('compile') {
+    group = 'lab'
+    description = 'Компиляция исходного кода проекта.'
+
+    dependsOn 'classes'
+}
+
+
+war {
+    archiveFileName = "lab3-${version}.war"
+    manifest {
+        attributes(
+                'Implementation-Title': 'Lab3 WebApp',
+                'Implementation-Version': version)
+    }
+}
+
+
+tasks.named('build'){
+    group='lab'
+    description = 'Компиляция исходного кода и сборка war архива.'
+
+    dependsOn 'compile'
+    dependsOn 'war'
+
+    finalizedBy 'music'
+}
+
+tasks.named('clean'){
+    group='lab'
+    description='Удаление скомпилированного кода и временных файлов'
+
+    doLast {
+        delete "$buildDir"
+        println 'Все временные файлы удалены'
+
+    }
+}
+
+tasks.register('music'){
+    group='lab'
+    description='Музончик после успешной сборки'
+
+    doLast {
+        println 'Туц-туц кря-кря ыр баньг молодой бушидо жо 52'
+    }
+}
+
