@@ -10,45 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4f663821-082b-41a0-8749-99af2f0f9a05" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules/web_lab3_kotlin.lab3.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/82bfd41d-ab40-4809-97fd-99d29fa3a5f2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/82bfd41d-ab40-4809-97fd-99d29fa3a5f2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/lab3.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/lab3.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/counters.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/counters.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/file-to-id.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/file-to-id.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/id-to-file.tab_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/last-build.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/local-state/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/local-state/build-history.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/lab3-1.0-SNAPSHOT-KOTLIN.war" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/lab3-1.0-SNAPSHOT-KOTLIN.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/war/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/war/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/ru/mikhail/lab3/DotChecker.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/ru/mikhail/lab3/DotChecker.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +57,19 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="lab3" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="lab3" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="lab" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="lab3" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -106,8 +90,8 @@
         <option value="JavaScript File" />
         <option value="Kotlin Interface" />
         <option value="Kotlin Data Class" />
-        <option value="Kotlin Class" />
         <option value="Kotlin File" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -127,45 +111,58 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Gradle.Build lab3.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build lab3_kotlin.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.lab3_kotlin [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.lab3_kotlin [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.lab3_kotlin [war].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.web_lab3_kotlin [compile].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.web_lab3_kotlin [music].executor&quot;: &quot;Run&quot;,
-    &quot;JBoss/WildFly Server.JBoss/WildFly 33.0.2.Final.executor&quot;: &quot;Run&quot;,
-    &quot;JBoss/WildFly Server.JBoss/WildFly 34.0.1.Final.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/MrSva/Downloads/Telegram Desktop/Labwork4&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Gradle.Build lab3.executor": "Run",
+    "Gradle.Build lab3_kotlin.executor": "Run",
+    "Gradle.Build web_lab3_kotlin.executor": "Run",
+    "Gradle.DotCheckerTest.executor": "Run",
+    "Gradle.DotCheckerTest.testCheckDot.executor": "Run",
+    "Gradle.DotCheckerTest.testCheckFirstQuarter.executor": "Run",
+    "Gradle.lab3_kotlin [build].executor": "Run",
+    "Gradle.lab3_kotlin [clean].executor": "Run",
+    "Gradle.lab3_kotlin [war].executor": "Run",
+    "Gradle.web_lab3_kotlin [alt].executor": "Run",
+    "Gradle.web_lab3_kotlin [build].executor": "Run",
+    "Gradle.web_lab3_kotlin [checkKotlinGradlePluginConfigurationErrors].executor": "Run",
+    "Gradle.web_lab3_kotlin [check].executor": "Run",
+    "Gradle.web_lab3_kotlin [clean].executor": "Run",
+    "Gradle.web_lab3_kotlin [compile].executor": "Run",
+    "Gradle.web_lab3_kotlin [lab_build].executor": "Run",
+    "Gradle.web_lab3_kotlin [lab_clean].executor": "Run",
+    "Gradle.web_lab3_kotlin [lab_test].executor": "Run",
+    "Gradle.web_lab3_kotlin [music].executor": "Run",
+    "Gradle.web_lab3_kotlin [test].executor": "Run",
+    "JBoss/WildFly Server.JBoss/WildFly 33.0.2.Final.executor": "Run",
+    "JBoss/WildFly Server.JBoss/WildFly 34.0.1.Final.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/MrSva/Downloads/Telegram Desktop/Labwork4",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ],
-    &quot;kotlin-gradle-user-dirs&quot;: [
-      &quot;C:\\Users\\MrSva\\.gradle&quot;
+    "kotlin-gradle-user-dirs": [
+      "C:\\Users\\MrSva\\.gradle"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\MrSva\Desktop\Documents\3-rd_Sem\Web\lab3_kotlin" />
@@ -174,11 +171,11 @@
       <recent name="C:\Users\MrSva\Desktop\Documents\3-rd_Sem\Web\lab3\lab3\src\main\webapp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\MrSva\Desktop\Documents\4-th_Sem\OPI\lab3\web_lab3_kotlin\src\main\resources" />
       <recent name="C:\Users\MrSva\Desktop\Documents\3-rd_Sem\Web\lab3_kotlin\src\main\resources" />
       <recent name="C:\Users\MrSva\Desktop\Documents\3-rd_Sem\Web\lab3_kotlin" />
       <recent name="C:\Users\MrSva\Desktop\Documents\3-rd_Sem\Web\lab3_kotlin\src\main\kotlin" />
       <recent name="C:\Users\MrSva\Desktop\Documents\3-rd_Sem\Web\lab3_kotlin\src\main\webapp\audio" />
-      <recent name="C:\Users\MrSva\Desktop\Documents\3-rd_Sem\Web\lab3_kotlin\images" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="ru.mikhail.lab3.dto" />
@@ -194,8 +191,13 @@
       <recent name="ru.mikhail.lab3" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.lab3_kotlin [build]">
-    <configuration name="lab3_kotlin [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.web_lab3_kotlin [alt]">
+    <configuration default="true" type="Application" factoryName="Application">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="web_lab3_kotlin [alt]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -206,7 +208,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="build" />
+            <option value="alt" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -217,7 +219,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="lab3_kotlin [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="web_lab3_kotlin [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -239,7 +241,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="lab3_kotlin [war]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="web_lab3_kotlin [lab_build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -250,7 +252,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="war" />
+            <option value="lab_build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -261,7 +263,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="web_lab3_kotlin [compile]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="web_lab3_kotlin [lab_clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -272,7 +274,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="compile" />
+            <option value="lab_clean" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -283,7 +285,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="web_lab3_kotlin [music]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="web_lab3_kotlin [lab_test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -294,7 +296,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="music" />
+            <option value="lab_test" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -376,26 +378,21 @@
         </option>
       </method>
     </configuration>
-    <configuration default="true" type="NimRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="nim.task.build.to.cache" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Gradle.web_lab3_kotlin [compile]" />
-      <item itemvalue="Gradle.web_lab3_kotlin [music]" />
-      <item itemvalue="Gradle.lab3_kotlin [build]" />
-      <item itemvalue="Gradle.lab3_kotlin [clean]" />
-      <item itemvalue="Gradle.lab3_kotlin [war]" />
+      <item itemvalue="Gradle.web_lab3_kotlin [alt]" />
+      <item itemvalue="Gradle.web_lab3_kotlin [clean]" />
+      <item itemvalue="Gradle.web_lab3_kotlin [lab_build]" />
+      <item itemvalue="Gradle.web_lab3_kotlin [lab_clean]" />
+      <item itemvalue="Gradle.web_lab3_kotlin [lab_test]" />
       <item itemvalue="JBoss/WildFly Server.JBoss/WildFly 34.0.1.Final" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.lab3_kotlin [build]" />
-        <item itemvalue="Gradle.lab3_kotlin [clean]" />
-        <item itemvalue="Gradle.web_lab3_kotlin [music]" />
-        <item itemvalue="Gradle.web_lab3_kotlin [compile]" />
-        <item itemvalue="Gradle.lab3_kotlin [war]" />
+        <item itemvalue="Gradle.web_lab3_kotlin [alt]" />
+        <item itemvalue="Gradle.web_lab3_kotlin [lab_clean]" />
+        <item itemvalue="Gradle.web_lab3_kotlin [lab_build]" />
+        <item itemvalue="Gradle.web_lab3_kotlin [lab_test]" />
+        <item itemvalue="Gradle.web_lab3_kotlin [clean]" />
       </list>
     </recent_temporary>
   </component>
@@ -488,6 +485,8 @@
       <workItem from="1738587531735" duration="207000" />
       <workItem from="1738588699444" duration="24000" />
       <workItem from="1744719553290" duration="5957000" />
+      <workItem from="1744754742573" duration="327000" />
+      <workItem from="1744797134442" duration="9296000" />
     </task>
     <servers />
   </component>

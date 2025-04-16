@@ -7,7 +7,7 @@ object DotChecker {
                 checkThirdQuarter(x, y, r) || checkFourthQuarter(x, y, r)
     }
 
-    private fun checkFirstQuarter(x: Float, y: Float, r: Float): Boolean {
+    fun checkFirstQuarter(x: Float, y: Float, r: Float): Boolean {
         return if (x >= 0 && y >= 0) {
             // Треугольник со сторонами R/2
             y <= (-x + r / 2)
@@ -16,11 +16,11 @@ object DotChecker {
         }
     }
 
-    private fun checkSecondQuarter(): Boolean {
+    fun checkSecondQuarter(): Boolean {
         return false
     }
 
-    private fun checkThirdQuarter(x: Float, y: Float, r: Float): Boolean {
+    fun checkThirdQuarter(x: Float, y: Float, r: Float): Boolean {
         return if (x <= 0 && y <= 0) {
             // Квадрат
             x >= -r && y >= -r
@@ -29,7 +29,7 @@ object DotChecker {
         }
     }
 
-    private fun checkFourthQuarter(x: Float, y: Float, r: Float): Boolean {
+    fun checkFourthQuarter(x: Float, y: Float, r: Float): Boolean {
         return if (x >= 0 && y <= 0) {
             // Условие: x^2 + y^2 <= R^2
             x * x + y * y <= r * r

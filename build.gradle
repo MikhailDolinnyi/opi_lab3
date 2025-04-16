@@ -1,3 +1,5 @@
+import javax.sound.sampled.AudioSystem
+
 plugins {
     id 'java'
     id 'war'
@@ -5,19 +7,15 @@ plugins {
     id 'org.jetbrains.kotlin.plugin.jpa' version '2.0.21'
 }
 
+tasks.withType(JavaExec).configureEach {
+    jvmArgs += "-Dfile.encoding=UTF-8"
+}
+
 group = 'ru.mikhail'
-version = '1.0-SNAPSHOT-KOTLIN'
+version = project.findProperty("projectVersion")
 
 repositories {
     mavenCentral()
-}
-
-// Версии библиотек
-ext {
-    junitVersion = '5.9.2'
-    hibernateVersion = '6.6.1.Final'
-    postgresqlVersion = '42.7.4'
-    jakartaFacesVersion = '3.0.3'
 }
 
 tasks.withType(JavaCompile).configureEach {
@@ -25,35 +23,21 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 dependencies {
-    // Компиляция только интерфейсов (API)
-    compileOnly 'jakarta.enterprise:jakarta.enterprise.cdi-api:3.0.0'
-    compileOnly 'jakarta.persistence:jakarta.persistence-api:3.0.0'
-    compileOnly 'jakarta.faces:jakarta.faces-api:3.0.0'
-    compileOnly 'jakarta.servlet:jakarta.servlet-api:5.0.0'
+    compileOnly "jakarta.enterprise:jakarta.enterprise.cdi-api:${cdiApiVersion}"
+    compileOnly "jakarta.persistence:jakarta.persistence-api:${jpaApiVersion}"
+    compileOnly "jakarta.faces:jakarta.faces-api:${jakartaFacesApiVersion}"
+    compileOnly "jakarta.servlet:jakarta.servlet-api:${servletApiVersion}"
 
-    // Реализация Jakarta Faces
-    implementation 'jakarta.faces:jakarta.faces-api:4.1.2'
+    implementation "jakarta.faces:jakarta.faces-api:${jakartaFacesApiVersion}"
+    implementation "org.hibernate.orm:hibernate-core:${hibernateVersion}"
+    implementation "jakarta.el:jakarta.el-api:${jakartaElVersion}"
+    implementation "jakarta.validation:jakarta.validation-api:${jakartaValidationVersion}"
+    implementation "org.postgresql:postgresql:${postgresqlVersion}"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation "org.mapstruct:mapstruct:${mapstructVersion}"
 
-
-    // Hibernate и JPA
-    implementation 'org.hibernate.orm:hibernate-core:6.6.3.Final'
-    implementation 'jakarta.el:jakarta.el-api:6.0.1'
-    implementation 'jakarta.validation:jakarta.validation-api:3.0.2'
-
-    // PostgreSQL драйвер
-    implementation 'org.postgresql:postgresql:42.7.4'
-
-
-    // Kotlin Standard Library
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
-
-    // Тестирование JUnit
     testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
-
-
-    implementation 'org.mapstruct:mapstruct:1.6.3'
-
 }
 
 test {
@@ -61,56 +45,138 @@ test {
 }
 
 kotlin {
-    // Используемая версия JVM
-    jvmToolchain(11)
+    jvmToolchain(Integer.parseInt(project.findProperty("kotlinJvmTarget") as String))
 }
-
 
 tasks.register('compile') {
     group = 'lab'
     description = 'Компиляция исходного кода проекта.'
-
     dependsOn 'classes'
 }
-
 
 war {
     archiveFileName = "lab3-${version}.war"
     manifest {
         attributes(
                 'Implementation-Title': 'Lab3 WebApp',
-                'Implementation-Version': version)
+                'Implementation-Version': version
+        )
     }
 }
 
-
-tasks.named('build'){
-    group='lab'
+tasks.register('lab_build') {
+    group = 'lab'
     description = 'Компиляция исходного кода и сборка war архива.'
-
-    dependsOn 'compile'
-    dependsOn 'war'
-
+    dependsOn 'compile', 'war'
     finalizedBy 'music'
 }
 
-tasks.named('clean'){
-    group='lab'
-    description='Удаление скомпилированного кода и временных файлов'
-
+tasks.register('lab_clean') {
+    group = 'lab'
+    description = 'Удаление скомпилированного кода и временных файлов'
     doLast {
         delete "$buildDir"
         println 'Все временные файлы удалены'
-
     }
 }
 
-tasks.register('music'){
-    group='lab'
-    description='Музончик после успешной сборки'
+tasks.register('music') {
+    group = 'lab'
+    description = 'Проигрывает музыку после сборки проекта (асинхронно)'
+    doLast {
+        println '[music] Воспроизведение музыки в фоне...'
+        def musicFile = file('src/main/resources/dolina.wav')
+        if (musicFile.exists()) {
+            Thread.start {
+                try {
+                    def clip = AudioSystem.getClip()
+                    clip.open(AudioSystem.getAudioInputStream(musicFile))
+                    clip.start()
+                    println '[music] ▶ Музыка играет (не блокирует поток)'
+                } catch (Exception e) {
+                    println "[music] Ошибка воспроизведения: ${e.message}"
+                }
+            }
+        } else {
+            println '[music] Файл не найден: dolina.wav'
+        }
+    }
+}
+
+tasks.register('alt') {
+    group = 'lab'
+    description = 'Создание альтернативной версии с заменой всех имён классов, интерфейсов, переменных'
+
+    def altSrcDir = file("$buildDir/altSrc")
+    def originalSrcDirs = []
+
+    dependsOn 'clean'
+
+    doFirst {
+        println '[alt] Копируем исходники...'
+        copy {
+            from 'src/main/kotlin'
+            into altSrcDir
+            include '**/*.kt'
+        }
+
+        println '[alt] Ищем все классы/объекты/интерфейсы и делаем замену...'
+
+        def replacements = [:]  // Map<String, String> = [OriginalName: AltOriginalName]
+
+        // Шаг 1: найти все имена (class|object|interface)
+        fileTree(dir: altSrcDir, include: '**/*.kt').each { file ->
+            def text = file.getText('UTF-8')
+            def matcher = text =~ /(?:class|object|interface)\s+([A-Z][A-Za-z0-9_]*)/
+
+            matcher.each { match ->
+                def originalName = match[1]
+                def altName = "Alt${originalName}"
+                replacements[originalName] = altName
+            }
+        }
+
+        // Шаг 2: заменить во всех файлах и переименовать
+        fileTree(dir: altSrcDir, include: '**/*.kt').each { file ->
+            def text = file.getText('UTF-8')
+            replacements.each { orig, alt ->
+                text = text.replaceAll("\\b${orig}\\b", alt)
+            }
+            file.write(text, 'UTF-8')
+
+            // Переименовать файл
+            replacements.each { orig, alt ->
+                if (file.name == "${orig}.kt") {
+                    file.renameTo(new File(file.parentFile, "${alt}.kt"))
+                }
+            }
+        }
+
+        println '[alt] Подмена исходников Gradle...'
+        originalSrcDirs = sourceSets.main.java.srcDirs
+        sourceSets.main.java.setSrcDirs([altSrcDir])
+    }
 
     doLast {
-        println 'Туц-туц кря-кря ыр баньг молодой бушидо жо 52'
+        println '[alt] Выполняем gradlew build...'
+        exec {
+            commandLine 'cmd', '/c', 'gradlew.bat', 'build', '--no-daemon'
+        }
+        println '[alt] Возвращаем исходники...'
+        sourceSets.main.java.setSrcDirs(originalSrcDirs)
     }
 }
 
+
+
+tasks.register('lab_test') {
+    group = 'lab'
+    description = 'Запуск JUnit-тестов после сборки проекта.'
+    dependsOn 'build'
+    doLast {
+        println '[test] Запускаем J-Unit тесты'
+        exec {
+            commandLine 'cmd', '/c', 'gradlew.bat', 'test', '--no-daemon'
+        }
+    }
+}
